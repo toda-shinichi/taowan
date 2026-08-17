@@ -69,20 +69,39 @@
   <section class="section section-bg-page">
     <div class="container container-narrow">
       
-      <div style="background: #ffffff; border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); padding: 18px 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <!-- Top Introduction Banner -->
+      <div style="background: #ffffff; border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); padding: 18px 24px; margin-bottom: 24px; box-shadow: var(--shadow-sm);">
         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">
           <strong>歷史紀錄導言：</strong>大澳灣文化工作團自創立以來，結合台東及旅居北部之原住民朋友，於都會區克難排練、培植文化幼苗，並多次代表台灣登上國際文化舞台。以下忠實收錄團隊創立以來 18 大代表性歷史活動紀錄，點擊照片皆可放大檢視原圖細節。
         </p>
       </div>
 
+      <!-- UX Theme Filter Pill Toolbar -->
+      <div class="filter-toolbar" style="background: #ffffff; padding: 16px 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin-bottom: 28px; position: sticky; top: 76px; z-index: 20;">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;" id="activityFilterPills">
+            <button class="filter-pill active" data-filter="all">全部紀實 (18)</button>
+            <button class="filter-pill" data-filter="international">國際文化交流 (4)</button>
+            <button class="filter-pill" data-filter="major_events">國家與大型展演 (5)</button>
+            <button class="filter-pill" data-filter="community">社區深耕與公益 (5)</button>
+            <button class="filter-pill" data-filter="heritage">團隊排練與傳承 (4)</button>
+          </div>
+          <div id="activityCountIndicator" style="font-size: 0.84rem; color: var(--text-muted); font-weight: 600;">
+            顯示 <strong id="actVisibleCount" style="color: var(--color-accent);">18</strong> 篇
+          </div>
+        </div>
+      </div>
 
-      <div class="about-hero-box" id="act-1" style="margin-bottom: 32px; padding: 28px;">
+      <!-- Chapters List -->
+      <div id="activityChaptersContainer">
+
+      <div class="about-hero-box activity-chapter-card" data-category="international" id="act-1" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 1 篇紀實</span>
             <span class="badge-tag tag-forest">國際文化交流</span>
           </div>
-          <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">國際展演</span>
+          <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">2000 年代初期</span>
         </div>
         
         <h3 style="color: var(--color-primary); font-size: 1.45rem; font-weight: 800; line-height: 1.4; margin-bottom: 14px;">
@@ -109,7 +128,7 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-2" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="international" id="act-2" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 2 篇紀實</span>
@@ -142,11 +161,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-3" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="international" id="act-3" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 3 篇紀實</span>
-            <span class="badge-tag tag-forest">國際醫學年會展演</span>
+            <span class="badge-tag tag-forest">國際文化交流</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">重要歷史專案</span>
         </div>
@@ -187,13 +206,13 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-4" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="community" id="act-4" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 4 篇紀實</span>
-            <span class="badge-tag tag-forest">公益募款展演</span>
+            <span class="badge-tag tag-forest">社區深耕與公益</span>
           </div>
-          <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">公益行腳</span>
+          <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">公益募款展演</span>
         </div>
         
         <h3 style="color: var(--color-primary); font-size: 1.45rem; font-weight: 800; line-height: 1.4; margin-bottom: 14px;">
@@ -220,11 +239,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-5" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="community" id="act-5" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 5 篇紀實</span>
-            <span class="badge-tag tag-forest">文化與學術交流</span>
+            <span class="badge-tag tag-forest">社區深耕與公益</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">文化展演</span>
         </div>
@@ -253,11 +272,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-6" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="major_events" id="act-6" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 6 篇紀實</span>
-            <span class="badge-tag tag-forest">國際青年大會開幕</span>
+            <span class="badge-tag tag-forest">國家與大型展演</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">2005 年</span>
         </div>
@@ -286,11 +305,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-7" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="major_events" id="act-7" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 7 篇紀實</span>
-            <span class="badge-tag tag-forest">國際青年交流</span>
+            <span class="badge-tag tag-forest">國家與大型展演</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">2005 年</span>
         </div>
@@ -319,11 +338,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-8" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="major_events" id="act-8" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 8 篇紀實</span>
-            <span class="badge-tag tag-forest">企業週年展演</span>
+            <span class="badge-tag tag-forest">國家與大型展演</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">2006 年</span>
         </div>
@@ -352,11 +371,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-9" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="major_events" id="act-9" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 9 篇紀實</span>
-            <span class="badge-tag tag-forest">國家官方發表會</span>
+            <span class="badge-tag tag-forest">國家與大型展演</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">2006 年</span>
         </div>
@@ -385,11 +404,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-10" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="community" id="act-10" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 10 篇紀實</span>
-            <span class="badge-tag tag-forest">社區營造展演</span>
+            <span class="badge-tag tag-forest">社區深耕與公益</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">社區深耕</span>
         </div>
@@ -418,11 +437,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-11" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="major_events" id="act-11" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 11 篇紀實</span>
-            <span class="badge-tag tag-forest">學術與公益音樂會</span>
+            <span class="badge-tag tag-forest">國家與大型展演</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">2006 年</span>
         </div>
@@ -451,13 +470,13 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-12" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="community" id="act-12" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 12 篇紀實</span>
-            <span class="badge-tag tag-forest">公益社團展演</span>
+            <span class="badge-tag tag-forest">社區深耕與公益</span>
           </div>
-          <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">歷史紀實</span>
+          <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">公益社團展演</span>
         </div>
         
         <h3 style="color: var(--color-primary); font-size: 1.45rem; font-weight: 800; line-height: 1.4; margin-bottom: 14px;">
@@ -484,11 +503,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-13" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="community" id="act-13" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 13 篇紀實</span>
-            <span class="badge-tag tag-forest">地方表揚大會</span>
+            <span class="badge-tag tag-forest">社區深耕與公益</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">2006 年</span>
         </div>
@@ -517,11 +536,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-14" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="heritage" id="act-14" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 14 篇紀實</span>
-            <span class="badge-tag tag-forest">扶輪公益展演</span>
+            <span class="badge-tag tag-forest">團隊排練與傳承</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">2007 年</span>
         </div>
@@ -550,11 +569,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-15" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="international" id="act-15" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 15 篇紀實</span>
-            <span class="badge-tag tag-forest">跨國國際音樂會</span>
+            <span class="badge-tag tag-forest">國際文化交流</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">2007 年</span>
         </div>
@@ -583,11 +602,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-16" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="heritage" id="act-16" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 16 篇紀實</span>
-            <span class="badge-tag tag-forest">幕後排練紀實</span>
+            <span class="badge-tag tag-forest">團隊排練與傳承</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">長年深耕</span>
         </div>
@@ -616,17 +635,17 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-17" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="heritage" id="act-17" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 17 篇紀實</span>
-            <span class="badge-tag tag-forest">團隊精神教育</span>
+            <span class="badge-tag tag-forest">團隊排練與傳承</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">團隊紀律</span>
         </div>
         
         <h3 style="color: var(--color-primary); font-size: 1.45rem; font-weight: 800; line-height: 1.4; margin-bottom: 14px;">
-          精神紀律、文化尊嚴與演出前後的虔誠祈禱與感恩
+          精神紀律、文化尊嚴與演出前後的虔誠同心禱告與感恩
         </h3>
         
         <p style="color: var(--text-main); font-size: 0.98rem; line-height: 1.85; margin-bottom: 12px;">
@@ -649,11 +668,11 @@
       </div>
     
 
-      <div class="about-hero-box" id="act-18" style="margin-bottom: 32px; padding: 28px;">
+      <div class="about-hero-box activity-chapter-card" data-category="heritage" id="act-18" style="margin-bottom: 32px; padding: 28px; transition: all 0.3s ease;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
           <div style="display: flex; gap: 8px; align-items: center;">
             <span class="badge-tag tag-primary">第 18 篇紀實</span>
-            <span class="badge-tag tag-forest">文化傳承扎根</span>
+            <span class="badge-tag tag-forest">團隊排練與傳承</span>
           </div>
           <span style="font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: 0.9rem;">永續傳承</span>
         </div>
@@ -681,6 +700,7 @@
         </div>
       </div>
     
+      </div>
 
       <div class="about-hero-box" style="text-align: center; margin-top: 40px;">
         <h3 style="color: var(--color-primary); font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">
@@ -752,5 +772,34 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pills = document.querySelectorAll('#activityFilterPills .filter-pill');
+      const cards = document.querySelectorAll('.activity-chapter-card');
+      const countEl = document.querySelector('#actVisibleCount');
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const filter = pill.getAttribute('data-filter');
+          let visible = 0;
+
+          cards.forEach(card => {
+            const cat = card.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              card.style.display = 'block';
+              visible++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (countEl) countEl.textContent = visible;
+        });
+      });
+    });
+  </script>
 </body>
 </html>

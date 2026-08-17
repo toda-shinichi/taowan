@@ -54,6 +54,15 @@ function initMobileNav() {
       document.body.style.overflow = '';
     });
   });
+
+  // Close when clicking outside drawer
+  document.addEventListener('click', (e) => {
+    if (drawer.classList.contains('open') && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+      drawer.classList.remove('open');
+      toggleBtn.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
 }
 
 /* ---------------------------------------------------------
@@ -87,7 +96,7 @@ function initBackToTop() {
 }
 
 /* ---------------------------------------------------------
-   4. Image Lightbox Viewer
+   4. Image Lightbox Viewer with Swipe & Keyboard Support
 --------------------------------------------------------- */
 let currentLightboxImages = [];
 let currentLightboxIndex = 0;
@@ -164,8 +173,25 @@ function initLightbox() {
     if (e.key === 'ArrowRight') nextImage();
   });
 
+  // Touch Swipe for Mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  modal.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  modal.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) {
+      nextImage(); // Swipe left -> Next
+    } else if (touchEndX - touchStartX > 50) {
+      prevImage(); // Swipe right -> Prev
+    }
+  }, { passive: true });
+
   // Bind gallery triggers
-  document.querySelectorAll('[data-lightbox]').forEach((el, i, all) => {
+  document.querySelectorAll('[data-lightbox]').forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
       const groupName = el.getAttribute('data-lightbox-group') || 'default';
@@ -185,19 +211,17 @@ function initLightbox() {
 }
 
 /* ---------------------------------------------------------
-   5. Tabs System (About & Detail pages)
+   5. Tabs System with URL Hash Support
 --------------------------------------------------------- */
 function initTabs() {
-  document.querySelectorAll('.tabs-nav').forEach(nav => {
-    const buttons = nav.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-tab');
-        const container = nav.closest('.tabs-container') || document;
-        
-        buttons.forEach(b => b.classList.remove('active'));
+  const switchTab = (targetId) => {
+    document.querySelectorAll('.tabs-nav').forEach(nav => {
+      const btn = nav.querySelector(`.tab-btn[data-tab="${targetId}"]`);
+      if (btn) {
+        nav.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
+        const container = nav.closest('.tabs-container') || document;
         container.querySelectorAll('.tab-content').forEach(content => {
           if (content.id === targetId) {
             content.classList.add('active');
@@ -205,8 +229,37 @@ function initTabs() {
             content.classList.remove('active');
           }
         });
+      }
+    });
+  };
+
+  document.querySelectorAll('.tabs-nav').forEach(nav => {
+    const buttons = nav.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-tab');
+        switchTab(targetId);
       });
     });
+  });
+
+  // Handle URL hash on load
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    if (hash === 'origin' || hash === 'tab-origin') switchTab('tab-origin');
+    else if (hash === 'service' || hash === 'tab-service') switchTab('tab-service');
+    else if (hash === 'spirit' || hash === 'tab-spirit') switchTab('tab-spirit');
+    else if (hash === 'timeline' || hash === 'tab-timeline') switchTab('tab-timeline');
+    else if (hash === 'articles' || hash === 'tab-articles') switchTab('tab-articles');
+  }
+
+  window.addEventListener('hashchange', () => {
+    const h = window.location.hash.replace('#', '');
+    if (h === 'origin' || h === 'tab-origin') switchTab('tab-origin');
+    else if (h === 'service' || h === 'tab-service') switchTab('tab-service');
+    else if (h === 'spirit' || h === 'tab-spirit') switchTab('tab-spirit');
+    else if (h === 'timeline' || h === 'tab-timeline') switchTab('tab-timeline');
+    else if (h === 'articles' || h === 'tab-articles') switchTab('tab-articles');
   });
 }
 
@@ -309,7 +362,9 @@ function initAdminAuth() {
       <div class="article-modal-dialog" style="max-width: 400px; padding: 32px;">
         <button id="closeLoginModalGlobal" class="modal-close-btn" aria-label="關閉">&times;</button>
         <div style="text-align: center; margin-bottom: 20px;">
-          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-accent-soft); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin: 0 auto 12px auto;"></div>
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-accent-soft); color: var(--color-accent); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
           <h3 style="color: var(--color-primary); font-size: 1.35rem; font-weight: 800;">管理員身分登入</h3>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">請輸入小編管理帳號與密碼以解鎖刊登功能</p>
         </div>
