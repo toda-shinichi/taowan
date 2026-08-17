@@ -1,0 +1,8 @@
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Old raw backup archive (optional to keep git repo light for GitHub Pages)
+taowan2000.weebly.com/
