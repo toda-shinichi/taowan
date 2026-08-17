@@ -18,7 +18,7 @@
 - **活動紀實 (`activity.html`)**：文化交流與樂舞展演大圖相簿，內建全螢幕燈箱輪播。
 - **訊息分享 (`message.html`)**：最新年度活動訊息與公告。
 - **鼓勵與支持 (`support.html`)**：100% 專款專用承諾、郵政劃撥與兆豐銀行捐款專用帳戶（可抵扣所得稅額）。
-- **聯絡我們 (`contact.html`)**：組織資訊、電話、傳真、信箱（表單直通 `wisrain@ms34.hinet.net`）與 Google Maps 地圖。
+- **聯絡我們 (`contact.html`)**：組織資訊（負責人：徐子桓、創團人：李美枝）、電話、傳真、信箱（表單直通 `wisrain@ms34.hinet.net`）與 Google Maps 地圖。
 
 ---
 
