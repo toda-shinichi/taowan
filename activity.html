@@ -24,7 +24,7 @@
     <div class="container header-inner">
       <a href="index.html" class="brand-logo" title="大澳灣文化工作團">
         <div class="logo-img-wrap">
-          <img src="assets/images/taowan_logo.png" alt="大澳灣文化工作團 標誌" class="logo-img" />
+          <img src="assets/images/taowan_logo.png" alt="大澳灣文化工作團 標誌" class="logo-img" / decoding="async">
         </div>
         <div class="brand-text-wrap">
           <span class="brand-title">大澳灣文化工作團</span>
@@ -86,8 +86,8 @@
       </div>
 
       <!-- UX Theme Filter Pill Toolbar -->
-      <div class="filter-toolbar" style="background: #ffffff; padding: 16px 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin-bottom: 28px; position: sticky; top: 76px; z-index: 20;">
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;">
+      <div class="filter-toolbar" style="background: var(--bg-surface); padding: 16px 20px; border: 1px solid var(--border-light); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin-bottom: 28px; position: sticky; top: 74px; z-index: 20;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
           <div style="display: flex; flex-wrap: wrap; gap: 8px;" id="activityFilterPills">
             <button class="filter-pill active" data-filter="all">全部紀實 (18)</button>
             <button class="filter-pill" data-filter="international">國際文化交流 (4)</button>
@@ -95,8 +95,32 @@
             <button class="filter-pill" data-filter="community">社區深耕與公益 (5)</button>
             <button class="filter-pill" data-filter="heritage">團隊排練與傳承 (4)</button>
           </div>
-          <div id="activityCountIndicator" style="font-size: 0.84rem; color: var(--text-muted); font-weight: 600;">
-            顯示 <strong id="actVisibleCount" style="color: var(--color-accent);">18</strong> 篇
+          
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <select id="chapterJumpSelect" class="form-control" style="width: auto; max-width: 240px; padding: 6px 12px; font-size: 0.85rem; height: 38px; border-radius: var(--radius-pill); cursor: pointer;" aria-label="選擇章節快速跳轉">
+              <option value="">快速跳轉章節...</option>
+              <option value="act-1">1. 日本北海道愛努族國際交流</option>
+              <option value="act-2">2. 加拿大多倫多國際文化節</option>
+              <option value="act-3">3. 亞洲小兒科醫學大會晚宴</option>
+              <option value="act-4">4. 台東基督教醫院行動醫療義賣</option>
+              <option value="act-5">5. APEC國際會議布農八部合音</option>
+              <option value="act-6">6. 順益關係企業60週年慶圓山大飯店</option>
+              <option value="act-7">7. 2008年全國社教博覽會展演</option>
+              <option value="act-8">8. 國際扶輪天琪幼兒交通車捐贈</option>
+              <option value="act-9">9. 2011年太麻里貧困家庭慈善贈米</option>
+              <option value="act-10">10. 台北國際蘭展與故宮祈福晚會</option>
+              <option value="act-11">11. 2007瑞士商務Eliana Burki音樂會</option>
+              <option value="act-12">12. 2006新聞局光影山林紀錄片發表</option>
+              <option value="act-13">13. 部落青年都會區大直橋下克難排練</option>
+              <option value="act-14">14. 青年公園克難排練與幼苗培育</option>
+              <option value="act-15">15. 樂舞精神傳承與傳統祈禱儀式</option>
+              <option value="act-16">16. 自行修繕道具與團隊紀律</option>
+              <option value="act-17">17. 培植文化種子與各校教學活動</option>
+              <option value="act-18">18. 都會區各族原住民文化幼苗培育</option>
+            </select>
+            <div id="activityCountIndicator" style="font-size: 0.84rem; color: var(--text-muted); font-weight: 500;">
+              顯示 <strong id="actVisibleCount" style="color: var(--color-rust); font-weight: 700;">18</strong> 篇
+            </div>
           </div>
         </div>
       </div>
@@ -124,7 +148,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a6_orig.jpg" data-caption="與日本愛努族頭目及族群長老合影" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a6_orig.jpg" alt="與日本愛努族頭目及族群長老合影" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a6_orig.jpg" alt="與日本愛努族頭目及族群長老合影" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -157,7 +181,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a7_orig.jpg" data-caption="大澳灣團隊與多倫多市長（後排中間）於加拿大文化節合影" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a7_orig.jpg" alt="大澳灣團隊與多倫多市長（後排中間）於加拿大文化節合影" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a7_orig.jpg" alt="大澳灣團隊與多倫多市長（後排中間）於加拿大文化節合影" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -190,7 +214,7 @@
         <div class="grid-2" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a8_orig.jpg" data-caption="亞洲小兒科醫學會大會晚宴盛大展演" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a8_orig.jpg" alt="亞洲小兒科醫學會大會晚宴盛大展演" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a8_orig.jpg" alt="亞洲小兒科醫學會大會晚宴盛大展演" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -202,7 +226,7 @@
         
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a9_orig.jpg" data-caption="當年隨同父母演出之文化幼苗，今已成為團隊主幹" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a9_orig.jpg" alt="當年隨同父母演出之文化幼苗，今已成為團隊主幹" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a9_orig.jpg" alt="當年隨同父母演出之文化幼苗，今已成為團隊主幹" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -235,7 +259,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a10_1626507893.jpg" data-caption="台東基督教醫院「行動醫療」募款義賣（SOGO廣場）與微風廣場展演" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a10_1626507893.jpg" alt="台東基督教醫院「行動醫療」募款義賣（SOGO廣場）與微風廣場展演" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a10_1626507893.jpg" alt="台東基督教醫院「行動醫療」募款義賣（SOGO廣場）與微風廣場展演" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -268,7 +292,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a12_1626507943.jpg" data-caption="文昌國小校舍落成社區聯歡（與歌手萬沙浪演出）及若石世界大會圓山飯店展演" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a12_1626507943.jpg" alt="文昌國小校舍落成社區聯歡（與歌手萬沙浪演出）及若石世界大會圓山飯店展演" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a12_1626507943.jpg" alt="文昌國小校舍落成社區聯歡（與歌手萬沙浪演出）及若石世界大會圓山飯店展演" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -301,7 +325,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a14_1626508102.jpg" data-caption="台東霧鹿布農族於真理大學禮堂演出報戰功與八部合音 (Pasibutbut)" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a14_1626508102.jpg" alt="台東霧鹿布農族於真理大學禮堂演出報戰功與八部合音 (Pasibutbut)" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a14_1626508102.jpg" alt="台東霧鹿布農族於真理大學禮堂演出報戰功與八部合音 (Pasibutbut)" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -334,7 +358,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a16_1626508153.jpg" data-caption="亞太扶青大會文化之夜，國際青年台上台下牽手共舞" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a16_1626508153.jpg" alt="亞太扶青大會文化之夜，國際青年台上台下牽手共舞" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a16_1626508153.jpg" alt="亞太扶青大會文化之夜，國際青年台上台下牽手共舞" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -367,7 +391,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a18_orig.jpg" data-caption="順益機構 60 週年慶圓山飯店 12 樓大會廳演出盛況" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a18_orig.jpg" alt="順益機構 60 週年慶圓山飯店 12 樓大會廳演出盛況" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a18_orig.jpg" alt="順益機構 60 週年慶圓山飯店 12 樓大會廳演出盛況" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -400,7 +424,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a_1.jpg" data-caption="行政院新聞局光影山林發表會台大國際會議中心演出" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a_1.jpg" alt="行政院新聞局光影山林發表會台大國際會議中心演出" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a_1.jpg" alt="行政院新聞局光影山林發表會台大國際會議中心演出" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -433,7 +457,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a2_1.jpg" data-caption="台北市名山里社區活動演出與半月池荒地改造啟用典禮" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a2_1.jpg" alt="台北市名山里社區活動演出與半月池荒地改造啟用典禮" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a2_1.jpg" alt="台北市名山里社區活動演出與半月池荒地改造啟用典禮" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -466,7 +490,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a4_orig.jpg" data-caption="中央圖書館學會年會展演與台北市府親子劇場法雨梵音音樂會" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a4_orig.jpg" alt="中央圖書館學會年會展演與台北市府親子劇場法雨梵音音樂會" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a4_orig.jpg" alt="中央圖書館學會年會展演與台北市府親子劇場法雨梵音音樂會" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -499,7 +523,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217170311a5_orig.jpg" data-caption="台北永福扶輪社授證 13 週年慶晚會演出" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217170311a5_orig.jpg" alt="台北永福扶輪社授證 13 週年慶晚會演出" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217170311a5_orig.jpg" alt="台北永福扶輪社授證 13 週年慶晚會演出" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -532,7 +556,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217230124_orig.jpg" data-caption="台北市政府親子劇場模範父親表揚大會展演" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217230124_orig.jpg" alt="台北市政府親子劇場模範父親表揚大會展演" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217230124_orig.jpg" alt="台北市政府親子劇場模範父親表揚大會展演" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -565,7 +589,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217230125_orig.jpg" data-caption="台北市議會大禮堂扶青講座與紐約紐約文山扶輪社 18 週年慶" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217230125_orig.jpg" alt="台北市議會大禮堂扶青講座與紐約紐約文山扶輪社 18 週年慶" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217230125_orig.jpg" alt="台北市議會大禮堂扶青講座與紐約紐約文山扶輪社 18 週年慶" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -598,7 +622,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217230126_orig.jpg" data-caption="瑞士商務處 25 週年慶 Eliana Burki 音樂會與瑞士副處長合影" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217230126_orig.jpg" alt="瑞士商務處 25 週年慶 Eliana Burki 音樂會與瑞士副處長合影" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217230126_orig.jpg" alt="瑞士商務處 25 週年慶 Eliana Burki 音樂會與瑞士副處長合影" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -631,7 +655,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217230127_orig.jpg" data-caption="克服困難於公園、橋下等克難場地堅持排練樂舞" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217230127_orig.jpg" alt="克服困難於公園、橋下等克難場地堅持排練樂舞" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217230127_orig.jpg" alt="克服困難於公園、橋下等克難場地堅持排練樂舞" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -664,7 +688,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217230128_orig.jpg" data-caption="團隊活動演出前同心禱告與圓滿感恩" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217230128_orig.jpg" alt="團隊活動演出前同心禱告與圓滿感恩" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217230128_orig.jpg" alt="團隊活動演出前同心禱告與圓滿感恩" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -697,7 +721,7 @@
         <div class="grid-1" style="gap: 16px; margin-top: 18px;">
           <div class="gallery-card" data-lightbox data-lightbox-group="activity-all" data-src="assets/images/217241225aa_1_1627875817.jpg" data-caption="在都會區培植原住民文化幼苗，守護部落文化香火" style="cursor: pointer;">
             <div class="gallery-img-wrap" style="height: 240px;">
-              <img src="assets/images/217241225aa_1_1627875817.jpg" alt="在都會區培植原住民文化幼苗，守護部落文化香火" class="gallery-img" loading="lazy" />
+              <img src="assets/images/217241225aa_1_1627875817.jpg" alt="在都會區培植原住民文化幼苗，守護部落文化香火" class="gallery-img" loading="lazy" / decoding="async">
               <div class="gallery-overlay-badge">
                 <div class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
               </div>
@@ -732,7 +756,7 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
-          <img src="assets/images/taowan_logo.png" alt="Logo" style="width: 36px; height: 36px; border-radius: 50%; background: #fff;" />
+          <img src="assets/images/taowan_logo.png" alt="Logo" style="width: 36px; height: 36px; border-radius: 50%; background: #fff;" / decoding="async">
           <span class="footer-brand-title" style="margin: 0;">大澳灣文化工作團</span>
         </div>
         <p class="footer-brand-desc">

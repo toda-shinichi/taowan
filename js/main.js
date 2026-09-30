@@ -1,6 +1,6 @@
 /**
  * 大澳灣文化工作團 (Taowan Cultural Working Group)
- * Main Interactive Module (huan-design-system engineering defense)
+ * Main Interactive Module (huan-design-system engineering defense & UX enhancements)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   initContactForm();
   initAdminAuth();
+  initCopyButtons();
 });
 
 /* ---------------------------------------------------------
@@ -33,7 +34,7 @@ function initHeaderScroll() {
       header.classList.remove('scrolled');
     }
 
-    // Hide when scrolling down, show when scrolling up
+    // Hide when scrolling down past threshold, show when scrolling up
     if (currentScrollY > 140 && currentScrollY > lastScrollY) {
       header.classList.add('header-hidden');
     } else {
@@ -102,7 +103,7 @@ function initBackToTop() {
     btn.className = 'back-to-top-btn';
     btn.setAttribute('aria-label', '回到頂端');
     btn.innerHTML = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     `;
@@ -123,7 +124,7 @@ function initBackToTop() {
 }
 
 /* ---------------------------------------------------------
-   4. Image Lightbox Viewer
+   4. Image Lightbox Viewer (with Event Delegation)
 --------------------------------------------------------- */
 let currentLightboxImages = [];
 let currentLightboxIndex = 0;
@@ -217,21 +218,22 @@ function initLightbox() {
     }
   }, { passive: true });
 
-  // Bind gallery triggers
-  document.querySelectorAll('[data-lightbox]').forEach((el) => {
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
-      const groupName = el.getAttribute('data-lightbox-group') || 'default';
-      const groupElements = Array.from(document.querySelectorAll(`[data-lightbox][data-lightbox-group="${groupName}"]`));
-      
-      const images = groupElements.map(item => ({
-        src: item.getAttribute('href') || item.getAttribute('data-src') || item.src,
-        caption: item.getAttribute('data-caption') || item.getAttribute('title') || item.querySelector('img')?.alt || ''
-      }));
+  // Event Delegation for all [data-lightbox] triggers (works for dynamic elements too)
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-lightbox]');
+    if (!el) return;
 
-      const clickedIndex = groupElements.indexOf(el);
-      openLightbox(images, clickedIndex >= 0 ? clickedIndex : 0);
-    });
+    e.preventDefault();
+    const groupName = el.getAttribute('data-lightbox-group') || 'default';
+    const groupElements = Array.from(document.querySelectorAll(`[data-lightbox][data-lightbox-group="${groupName}"]`));
+    
+    const images = groupElements.map(item => ({
+      src: item.getAttribute('href') || item.getAttribute('data-src') || item.src,
+      caption: item.getAttribute('data-caption') || item.getAttribute('title') || item.querySelector('img')?.alt || ''
+    }));
+
+    const clickedIndex = groupElements.indexOf(el);
+    openLightbox(images, clickedIndex >= 0 ? clickedIndex : 0);
   });
 
   window.openCustomLightbox = openLightbox;
@@ -378,7 +380,62 @@ function initContactForm() {
 }
 
 /* ---------------------------------------------------------
-   7. Unified Low-Key Admin Auth Module (taowan2000 / TAW99986206!)
+   7. Copy to Clipboard Utility
+--------------------------------------------------------- */
+function initCopyButtons() {
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const textToCopy = btn.getAttribute('data-copy');
+      if (!textToCopy) return;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showCopySuccess(btn);
+        }).catch(() => {
+          fallbackCopy(textToCopy, btn);
+        });
+      } else {
+        fallbackCopy(textToCopy, btn);
+      }
+    });
+  });
+}
+
+function fallbackCopy(text, btn) {
+  const tempInput = document.createElement('input');
+  tempInput.value = text;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  try {
+    document.execCommand('copy');
+    showCopySuccess(btn);
+  } catch (err) {}
+  document.body.removeChild(tempInput);
+}
+
+function showCopySuccess(btn) {
+  const originalHtml = btn.innerHTML;
+  btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polyline points="20 6 9 17 4 12"></polyline></svg> 已複製`;
+  btn.style.borderColor = 'var(--color-moss)';
+  btn.style.color = 'var(--color-moss)';
+  setTimeout(() => {
+    btn.innerHTML = originalHtml;
+    btn.style.borderColor = '';
+    btn.style.color = '';
+  }, 2200);
+}
+
+window.copyAccount = (text, btn) => {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => showCopySuccess(btn));
+  } else {
+    fallbackCopy(text, btn);
+  }
+};
+
+/* ---------------------------------------------------------
+   8. Unified Low-Key Admin Auth Module (taowan2000 / TAW99986206!)
 --------------------------------------------------------- */
 function initAdminAuth() {
   const ADMIN_USER = 'taowan2000';
